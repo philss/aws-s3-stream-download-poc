@@ -15,6 +15,7 @@ defmodule DownloadManager do
   ## Example
 
       iex> client = AWS.Client.create("your-secret-key", "your-access-key", "region")
+      iex> client = %{client | http_client: {DownloadManager.AWS.HTTPClient, []}}
       iex> stream = DownloadManager.aws_download_stream(client, "foo-bucket", "bar/baz-file.zip")
       iex> Stream.into(stream, File.stream!("my_file.html", [:append])) |> Stream.run()
 
