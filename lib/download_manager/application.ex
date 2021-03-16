@@ -10,6 +10,7 @@ defmodule DownloadManager.Application do
     children = [
       # Starts a worker by calling: DownloadManager.Worker.start_link(arg)
       # {DownloadManager.Worker, arg}
+      {Finch, name: DownloadManager.MyFinch}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
